@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="grid">
+      <div class="col-12">
+       <a href="javascript:;" class="navbar-menu"(click)="showMenu= !showMenu"><i class="pi pi-bars"></i></a>
+      </div>
+    </div>
+  </div>
+  <ul class="navbar-menu-list"[hidden]="!showMenu">
+    <li class="navbar-menu-item">
+      <a routerLink="/departamentos" class="navbar-menu-link">Departamentos</a>
+    </li>
+    <li class="navbar-menu-item">
+      <a routerLink="/funcionarios" class="navbar-menu-link">Funcionários</a>
+    </li>
+    <li class="navbar-menu-item">
+      <a routerLink="/cargos" class="navbar-menu-link">Cargos</a>
+    </li>
+    </ul>
+</nav>

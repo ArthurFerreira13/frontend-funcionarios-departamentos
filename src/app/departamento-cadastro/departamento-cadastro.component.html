@@ -1,0 +1,8 @@
+<label>Nome</label>
+<input type="text" appInputColor [corUsuario]="'green'" #texto="inputColorido"/>
+<br>
+<label>Descrição</label>
+<input type="text" appInputColor [corUsuario]="'blue'" />
+<br>
+<button (click)="texto.comFoco">Salvar</button>
+<button (click)="texto.semFoco()">Limpar</button>
