@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="grid">
+    <div class="col-12">
+      <h1 class="text-center">Departamentos</h1>
+    </div>
+
+    <div class="col-12 p-fluid">
+      <label for="id">Id</label>
+      <input id="id" pInputText type="text" style="display: block; width: 250px;" [(ngModel)]="termoBusca" />
+    </div>
+
+    <div class="col-12 p-fluid">
+      <label for="departamento" style="display: block;">Departamento</label>
+      <input id="departamento" pInputText type="text" [(ngModel)]="termoBusca" />
+    </div>
+
+    <div class="col-2 p-fluid">
+      <button pButton label="Pesquisar" variant="text"  severity="success" (click)="buscar()"></button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="col-12">
+      <p-table [value]="departamentosFiltrados" [paginator]="true" [rows]="5" [responsiveLayout]="'scroll'" [scrollable]="true"
+        [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} registros">
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-id">Id</th>
+            <th>Departamento</th>
+            <th class="col-acoes">Ações</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-departamento>
+          <tr>
+            <td class="col-id">{{ departamento.id }}</td>
+            <td [ngStyle]="{color: departamento.nomeDepartamento === 'TI' ? '#2eb82e' : '#495057'}">
+              {{ departamento.nomeDepartamento }}
+            </td>
+            <td class="col-acoes">
+              <button pButton icon="pi pi-pencil" severity="secondary"
+                pTooltip="Editar" tooltipPosition="top" (click)="editar(departamento)"></button>
+              <button pButton icon="pi pi-trash" severity="danger"
+                pTooltip="Excluir" tooltipPosition="top" (click)="excluir(departamento)"></button>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button pButton label="Novo Departamento"></button>
+  </div>
+</div>

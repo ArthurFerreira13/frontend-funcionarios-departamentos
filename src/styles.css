@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(11, 12, 11);
+}/* You can add global styles to this file, and also import other style files */
+label {
+  font-weight: bold;
+}
+@media (max-width: 1200px) {
+  .container {
+    width: 1170px;
+    margin: 0 auto;
+  }
+}
